@@ -222,6 +222,20 @@ Kamu boleh `pip install --break-system-packages` pustaka lain bila perlu. **Jang
 file kerja di direktori sementara.
 
 ---------------------------------------------------------------------------------------------------
+## Pesanan grafis harian (`format` = `carousel`, `single`, atau `story`)
+
+Sejak 22 Okt 2026, SEMUA desain Nuancier dikerjakan Sonya. Halaman tidak lagi memakai template di browser.
+Pesanan dengan field `format` selain `motion` membawa `konsepWajib: ["grafis","grafis"]`: dua konsep, keduanya **grafis**
+(field `jenis: "grafis"` pada tiap objek konsep), **A = kolase kertas rapi, B = close-up sinematik** sebagai gambar diam.
+Tidak ada voice over, tidak ada video.
+- Ukuran: `carousel` = 1080x1350, jumlah slide = cover (hook + sub) + satu slide per `naskah.langkah` + slide ajakan (`cta` + wordmark
+  "Nuancier Studio" + `@nuancierstudio`), maksimal 10. `single` = satu gambar 1080x1350. `story` = satu gambar 1080x1920 (zona aman video berlaku).
+- Tahap KONSEP: frame kunci = 3–4 slide pertama yang benar-benar dirender (JPG 540x675; story 540x960).
+- Tahap RENDER dan REVISI: sama persis dengan langkah **RENDER konsep grafis** di bagian portofolio di bawah
+  (`slides`, `slides_cloud`, `video: null`, `status: "review"`). Aturan isi tetap aturan Nuancier biasa (logo contoh berlabel FIKTIF).
+- Kata dari `naskah` boleh dipadatkan supaya muat dan enak dibaca, tetapi maknanya tidak boleh berubah. Tanda *bintang* = kata yang diberi aksen warna.
+
+---------------------------------------------------------------------------------------------------
 ## Pesanan portofolio (`sumber: "porto"`)
 
 Jers mengunggah PDF portofolio satu proyek; **Herman** sudah membacanya dan menulis `naskah`, `caption`, `ringkas_proyek`,
