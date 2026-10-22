@@ -222,18 +222,29 @@ Kamu boleh `pip install --break-system-packages` pustaka lain bila perlu. **Jang
 file kerja di direktori sementara.
 
 ---------------------------------------------------------------------------------------------------
-## Pesanan grafis harian (`format` = `carousel`, `single`, atau `story`)
+## Pesanan LANGSUNG (`langsung: true`): konten harian Nuancier — TANPA tahap pilih konsep
 
-Sejak 22 Okt 2026, SEMUA desain Nuancier dikerjakan Sonya. Halaman tidak lagi memakai template di browser.
-Pesanan dengan field `format` selain `motion` membawa `konsepWajib: ["grafis","grafis"]`: dua konsep, keduanya **grafis**
-(field `jenis: "grafis"` pada tiap objek konsep), **A = kolase kertas rapi, B = close-up sinematik** sebagai gambar diam.
-Tidak ada voice over, tidak ada video.
-- Ukuran: `carousel` = 1080x1350, jumlah slide = cover (hook + sub) + satu slide per `naskah.langkah` + slide ajakan (`cta` + wordmark
-  "Nuancier Studio" + `@nuancierstudio`), maksimal 10. `single` = satu gambar 1080x1350. `story` = satu gambar 1080x1920 (zona aman video berlaku).
-- Tahap KONSEP: frame kunci = 3–4 slide pertama yang benar-benar dirender (JPG 540x675; story 540x960).
-- Tahap RENDER dan REVISI: sama persis dengan langkah **RENDER konsep grafis** di bagian portofolio di bawah
-  (`slides`, `slides_cloud`, `video: null`, `status: "review"`). Aturan isi tetap aturan Nuancier biasa (logo contoh berlabel FIKTIF).
-- Kata dari `naskah` boleh dipadatkan supaya muat dan enak dibaca, tetapi maknanya tidak boleh berubah. Tanda *bintang* = kata yang diberi aksen warna.
+Jers ingin hemat: setelah ia menyetujui copy Herman, Sonya **langsung membuat versi final**. Tidak ada dua konsep, tidak ada status `pilih`.
+Semua pesanan harian/request Nuancier dari halaman membawa `langsung: true` dan field `format` (`carousel`, `single`, `story`, atau `motion`).
+Sejak 22 Okt 2026 halaman tidak lagi memakai template di browser; semua desain Nuancier dibuat di sini.
+
+Alur untuk pesanan `langsung` berstatus `antre`:
+1. Kunci seperti biasa (`status: "proses"`, `tahap: "render"`).
+2. **Pilih arah sendiri** dari `referensi/` (baca README dan lihat gambarnya): bawaan `carousel`/`single`/`story` = **kolase rapi**,
+   `motion` = **close-up sinematik**. Boleh memakai arah satunya bila topiknya jelas lebih cocok, tetapi jangan memakai arah yang
+   sama lebih dari 3 pesanan berturut-turut (lihat `gaya_riwayat_nua`).
+3. Tulis satu objek konsep sebagai catatan: `konsep: [{k:"A", jenis:"grafis"|"motion", nama, gaya, ringkas, palet, frames: []}]`, `pilih: "A"`.
+4. Langsung render final dalam sesi yang sama:
+   - `motion`: seperti Tahap RENDER biasa (voice over Luna wajib, `video`, Cloudinary, pratinjau).
+   - grafis: `carousel` 1080x1350, jumlah slide = cover (hook + sub) + satu slide per `naskah.langkah` + slide ajakan
+     (`cta` + wordmark "Nuancier Studio" + `@nuancierstudio`), maksimal 10; `single` = satu gambar 1080x1350;
+     `story` = satu gambar 1080x1920 (zona aman video berlaku). Lalu ikuti langkah **RENDER konsep grafis** di bagian portofolio
+     (`slides`, `slides_cloud`, `video: null`).
+5. Semua pemeriksaan kerapian dan perbandingan dengan referensi tetap wajib. Hasil akhir harus setara gambar referensi.
+6. `update`: `status: "review"`, `log` (arah yang dipilih dan alasannya dalam satu kalimat). Notifikasi: "Sonya: desain <topik> siap direview".
+7. REVISI dari Jers ditangani seperti biasa (status `revisi`, ikuti `catatan` dan `lampiran`).
+Kata dari `naskah` boleh dipadatkan supaya muat dan enak dibaca, tetapi maknanya tidak boleh berubah. Tanda *bintang* = kata beraksen warna.
+Kalau Jers menulis di `catatan` bahwa ia ingin dua pilihan, baru kembali ke Tahap KONSEP biasa.
 
 ---------------------------------------------------------------------------------------------------
 ## Pesanan portofolio (`sumber: "porto"`)
