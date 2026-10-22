@@ -164,7 +164,7 @@ Selalu pin tulisan dengan `if_version` dari bacaan terakhir. Kalau gagal karena 
 4. Tulis hasil, lalu kirim notifikasi push singkat ke Jers bila alatnya tersedia (contoh: "Sonya: 2 konsep video Nuancier siap dipilih").
 5. Kalau ada galat yang tidak bisa diselesaikan: `status: "gagal"`, `log: "<penjelasan singkat untuk Jers>"`. Jangan pernah membiarkan `proses`.
 
-### Tahap KONSEP (dari `antre`)
+### Tahap KONSEP (dari `antre`) — DILEWATI untuk pesanan `langsung: true` (lihat bagian "Pesanan LANGSUNG")
 - Baca naskah, topik, pov, catatan. Baca `gaya_riwayat_nua`. Baca `referensi/README.md` dan lihat semua gambar referensi.
 - Setelah frame kunci jadi, tempelkan berdampingan dengan gambar referensi arah yang sama. Kalau kualitasnya jelas di bawah referensi
   (lebih berantakan, lebih datar, teks lebih ramai), perbaiki dulu sebelum menyimpan.
