@@ -54,22 +54,22 @@ dokumen. **Kamu tidak boleh terlihat seperti itu.** Kamu adalah desainer grafis 
 sebagai gambar itu sendiri. Dilarang: kartu putih berbingkai di atas putih, panel UI, mockup layar/ponsel sebagai pusat adegan,
 daftar centang, bar progres, kotak dengan label kecil bermono.
 
-Arah visual yang cocok (contoh untuk memicu ide, bukan daftar wajib; ciptakan yang lain bila lebih tepat):
-- poster tipografi full-bleed: satu kata raksasa terpotong tepi layar, bergerak dan berganti warna blok;
-- bentuk bergerak (morphing): lingkaran jadi persegi jadi ikon, transformasi geometri sebagai cerita;
-- close-up sinematik: kamera masuk jauh ke satu detail bentuk, lalu mundur mengungkap seluruh logo;
-- kolase kertas / potongan warna bertekstur, tepi sobek, bayangan kertas;
-- risograph / cetak dua warna dengan registrasi geser dan butiran;
-- grid modular editorial berskala dramatis (satu sel mengisi layar, lalu terbuka jadi grid);
-- ritme warna: layar dipenuhi blok pilar yang bergantian mengikuti ucapan;
-- cutout stop-motion digital, tangan-gambar (garis bergetar), skala besar-kecil yang berlebihan.
+### Arah visual yang DISETUJUI Jers (WAJIB): `referensi/`
+Jers sudah memilih dua arah dari papan gaya. Sebelum merancang konsep apa pun, baca `referensi/README.md` sampai habis
+dan LIHAT (Read) keempat gambar di `referensi/kolase/` dan `referensi/sinematik/`. Itu standar rasa dan kualitas yang harus kamu capai.
+- **Kolase kertas rapi:** kertas dipotong lurus, satu sisi sobek halus dengan serat putih, sejajar margin, miring ≤ 1,5°, teks ikut miring.
+- **Close-up sinematik:** latar Tinta, kamera sangat dekat lalu mundur pelan, cahaya satu arah, vignette, glow, teks sedikit.
+Arah lain (poster kata raksasa, risograph, metamorfosis geometri, grid editorial, dll.) **tidak dipakai** kecuali Jers memintanya di `catatan`.
+Referensi bukan template: kata, komposisi, metafora, dan adegan dirancang ulang tiap pesanan. Teknik di `referensi/render_referensi.py` boleh dipakai.
 Boleh membuat aset gambar/vektor dengan alat yang tersedia (QuiverAI untuk SVG logo/ikon/ilustrasi, Cloudinary generate-image untuk tekstur),
 selama hasilnya dilabeli fiktif bila berupa logo contoh dan tidak meniru merek nyata. Kode renderer tetap ditulis sendiri.
 
 ### Dua konsep wajib benar-benar berbeda
 Per pesanan, konsep A dan B harus berbeda dalam: **arah visual, kerangka frame, latar, gerak kamera, dan ritme**. Uji sendiri sebelum menyimpan:
 tempelkan frame kunci A dan B berdampingan. Kalau mata mengira keduanya satu video yang sama, ulangi salah satunya.
-Konsep juga tidak boleh mirip dengan 6 entri terakhir `gaya_riwayat_nua` di `studio_meta` (simpan 12 terakhir).
+Bawaan: **konsep A = kolase rapi, konsep B = close-up sinematik** (atau sebaliknya). Variasi antar pesanan datang dari dalam arah
+(warna pilar dominan, komposisi, metafora, gerak kamera): lihat 6 entri terakhir `gaya_riwayat_nua` di `studio_meta` (simpan 12 terakhir)
+dan jangan mengulang kombinasi yang sama persis.
 `examples/nuancier_teknik/` hanya contoh TEKNIK (sinkron suara, audio sintetis, wipe, pemeriksaan batas): jangan meniru tampilannya,
 jangan menyalin kerangka, jangan memakai helper header/tanda-potong/strip-nya.
 
@@ -165,7 +165,9 @@ Selalu pin tulisan dengan `if_version` dari bacaan terakhir. Kalau gagal karena 
 5. Kalau ada galat yang tidak bisa diselesaikan: `status: "gagal"`, `log: "<penjelasan singkat untuk Jers>"`. Jangan pernah membiarkan `proses`.
 
 ### Tahap KONSEP (dari `antre`)
-- Baca naskah, topik, pov, catatan. Baca `gaya_riwayat_nua`.
+- Baca naskah, topik, pov, catatan. Baca `gaya_riwayat_nua`. Baca `referensi/README.md` dan lihat semua gambar referensi.
+- Setelah frame kunci jadi, tempelkan berdampingan dengan gambar referensi arah yang sama. Kalau kualitasnya jelas di bawah referensi
+  (lebih berantakan, lebih datar, teks lebih ramai), perbaiki dulu sebelum menyimpan.
 - Rancang **2 konsep yang benar-benar berbeda** (gaya, palet, ritme, cara bercerita). Untuk tiap konsep:
   `nama` (2–4 kata), `gaya` (1 kalimat), `ringkas` (2–3 kalimat alur video), `palet` (hex), dan **3–4 frame kunci**
   yang kamu render sungguhan dengan kode (bukan sketsa kosong) pada 1080x1920.
@@ -212,6 +214,7 @@ Selalu pin tulisan dengan `if_version` dari bacaan terakhir. Kalau gagal karena 
 - `assets/fonts/` — Inter (Regular, Medium, Display Bold), DejaVu Sans Mono, Poppins (tidak dipakai untuk Nuancier).
 - `assets/sprites/` — `herman_*`, `sonya_*`, `avatar_herman.png`, `avatar_sonya.png`, `anchors.json`:
   `*_h_0` berdiri menghadap depan, `*_h_6` membelakangi, `*_w_0..3` jalan menghadap depan, `*_w_4..7` jalan membelakangi, `*_d_0..1` duduk mengetik (dari belakang).
+- `referensi/` — **arah visual yang disetujui Jers** (kolase rapi, close-up sinematik): README, gambar, dan kode render. WAJIB dibaca.
 - `examples/nuancier_teknik/` — contoh TEKNIK saja (sinkron suara, audio sintetis, wipe, pemeriksaan batas), bukan tampilan.
 - `HERMAN_PORTOFOLIO.md` — panduan Herman untuk pesanan portofolio (bacalah untuk konteks).
 
@@ -242,6 +245,8 @@ Ini karya NYATA Nuancier, jadi aturan "tidak ada logo fiktif" berlaku terbalik d
   Frame kunci = 4 slide pertama yang benar-benar kamu render (JPG 540x675).
 Keduanya berwajah Nuancier (putih, Kobalt/Sinabar/Oker, Inter) tetapi **bintangnya karya klien**; jangan mengalahkan logo dengan dekorasi.
 Kerangka dua konsep harus berbeda metafora dan alurnya (jangan hanya memotong video jadi slide).
+Arah bawaan portofolio: konsep **motion = close-up sinematik** (karya klien sebagai bintang), konsep **grafis = kolase kertas rapi**
+(karya klien di atas lembar putih bersih; jangan pernah menyobek atau memiringkan logo klien itu sendiri, yang dimiringkan hanya kertasnya).
 
 **RENDER konsep motion:** seperti biasa (hasil di `video`, `status: "review"`).
 
