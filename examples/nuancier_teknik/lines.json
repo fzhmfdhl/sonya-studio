@@ -1,0 +1,44 @@
+[
+ {
+  "i": 0,
+  "text": "Logomu hilang, di ukuran foto profil?",
+  "dur": 2.74,
+  "file": "vo2/line_00.wav"
+ },
+ {
+  "i": 1,
+  "text": "Ini uji tiga detik, yang jarang dilakukan.",
+  "dur": 2.76,
+  "file": "vo2/line_01.wav"
+ },
+ {
+  "i": 2,
+  "text": "Satu. Kecilkan logomu sampai tiga puluh dua piksel. Kalau bentuknya hilang, berarti terlalu ramai.",
+  "dur": 7.24,
+  "file": "vo2/line_02.wav"
+ },
+ {
+  "i": 3,
+  "text": "Dua. Hapus detail kecil. Garis tipis dan teks mini, paling dulu lenyap.",
+  "dur": 4.36,
+  "file": "vo2/line_03.wav"
+ },
+ {
+  "i": 4,
+  "text": "Tiga. Siapkan versi ikon. Satu simbol sederhana, untuk ruang sempit.",
+  "dur": 4.88,
+  "file": "vo2/line_04.wav"
+ },
+ {
+  "i": 5,
+  "text": "Empat. Uji di layar ponsel. Di situlah, pelangganmu paling sering melihatnya.",
+  "dur": 4.89,
+  "file": "vo2/line_05.wav"
+ },
+ {
+  "i": 6,
+  "text": "Simpan, lalu uji logomu hari ini.",
+  "dur": 2.56,
+  "file": "vo2/line_06.wav"
+ }
+]
