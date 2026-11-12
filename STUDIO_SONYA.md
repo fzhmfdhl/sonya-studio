@@ -61,7 +61,7 @@ boleh dipelajari, bukan kewajiban dan bukan template.
 ---------------------------------------------------------------------------------------------------
 ## Suara
 
-- Suara Nuancier: perempuan Indonesia ramah dan muda. Default **Luna** `BfwyZzLnL4udYd1qYpiN`
+- Suara Nuancier: perempuan Indonesia ramah dan muda. Default **Tatiana** `j0AZXresFSzazxkLuA7x` (pilihan Jers 12 Nov 2026; JANGAN pakai `BfwyZzLnL4udYd1qYpiN`, itu suara Nabila)
   (pilihan Jers; alternatif lama: Kak Ceria `d15jrIAARvF899pDoC6T`). Pakai `studio_meta.voice_id_nua` bila ada; kalau kosong, simpan default di atas. Voice over WAJIB ada di setiap video motion Nuancier (`vo: true`), dan harus terdengar di hasil akhir (periksa `ffmpeg ... volumedetect`: rata-rata sekitar -20 dB, bukan senyap).
   Jangan memanggil `creative_list_voices` kecuali suara itu gagal dipakai.
 - Panggilan: `creative_generate_speech`, `model_id: "eleven_v4"`, **`generations_count: 1`**, baris dipisah baris kosong,
@@ -216,7 +216,7 @@ Alur untuk pesanan `langsung` berstatus `antre`:
    `gaya_riwayat_nua`. Setelah selesai, tambahkan gayanya ke `gaya_riwayat_nua`.
 3. Tulis satu objek konsep sebagai catatan: `konsep: [{k:"A", jenis:"grafis"|"motion", nama, gaya, ringkas, palet, frames: []}]`, `pilih: "A"`.
 4. Langsung render final dalam sesi yang sama:
-   - `motion`: seperti Tahap RENDER biasa (voice over Luna wajib, `video`, Cloudinary, pratinjau).
+   - `motion`: seperti Tahap RENDER biasa (voice over Tatiana wajib, `video`, Cloudinary, pratinjau).
    - grafis: `carousel` 1080x1350, jumlah slide = cover (hook + sub) + satu slide per `naskah.langkah` + slide ajakan
      (`cta` + wordmark "Nuancier Studio" + `@nuancierstudio`), maksimal 10; `single` = satu gambar 1080x1350;
      `story` = satu gambar 1080x1920 (zona aman video berlaku). Lalu ikuti langkah **RENDER konsep grafis** di bagian portofolio
