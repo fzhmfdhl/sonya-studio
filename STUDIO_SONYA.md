@@ -44,19 +44,47 @@ Topik tetap dari Herman (Nuancier), jadi yang sama dengan Bagas hanya **polanya*
    Yang BOLEH dipakai ulang hanyalah **alat** di `toolkit/` (sinkron suara, mixing, encode, cek) dan **aset** di `assets/`.
 2. **Tokoh:** yang boleh tampil hanya Herman dan Sonya (sprite pixel di `assets/sprites/`), bila konsep butuh tokoh.
    Jangan menampilkan wajah orang sungguhan.
-3. **Warna dan font mengikuti konsep**, sama seperti Bagas. Palet Nuancier (Putih `#FFFFFF`, Tinta `#15171C`, Kobalt `#2F4BDB`,
-   Sinabar `#E2472B`, Oker `#E7A02E`) dan Inter boleh dipakai sebagai bawaan bila konsepnya tidak menuntut lain. Yang wajib:
-   kontras terbaca, teks tidak gepeng (jangan pernah menskala huruf/ikon tidak proporsional), font terpasang dengan benar.
+3. **Palet dan font DIKUNCI (brand Nuancier, keputusan Jers 12 Nov 2026, palet "A3").** Yang berganti tiap video hanya ide visualnya.
+   | Peran | Warna | Dipakai untuk |
+   |---|---|---|
+   | Gelap | Tinta `#15171C` | pembuka, penutup, adegan "game"/HUD |
+   | Terang | Kertas `#F3F1EC` (kartu putih `#FFFFFF` di atasnya) | adegan penjelasan |
+   | Penuh | Plum `#4A2545` | adegan solusi / poin utama |
+   | Peringatan | Sinabar `#E2472B` | HANYA momen masalah ("hancur", "noda", "salah") |
+   | Sorot | Merah muda `#F7B9AE` | kata kunci, kata aktif subtitle, progress bar, stiker |
+   Abu pendukung: `#8A8F9C` (teks kecil di Kertas), `#B9BECB` (teks kecil di Tinta). **Dilarang biru dan oranye** sebagai warna brand
+   (Jers menolaknya). Warna lain hanya boleh di dalam karya klien / logo contoh FIKTIF, tidak di latar, teks, atau krom.
+   Ritme latar per video: minimal satu adegan Tinta, satu Kertas, satu Plum; Sinabar penuh hanya untuk adegan masalah.
+   **Font: Poppins** (Bold untuk judul, Medium untuk isi dan label). Inter tidak dipakai lagi. Huruf dan ikon tidak boleh gepeng.
 4. **Penutup tetap:** wordmark "Nuancier Studio" + `@nuancierstudio` (bila ada `assets/brand/nuancier_logo.png`, pakai itu).
 
 ### Dua konsep wajib benar-benar berbeda
-Per pesanan (selain pesanan `langsung`), konsep A dan B harus berbeda **gaya, palet, ritme, dan cara bercerita**.
+Per pesanan (selain pesanan `langsung`), konsep A dan B harus berbeda **ide visual, metafora, ritme, dan cara bercerita** (palet tetap A3).
 Uji sendiri sebelum menyimpan: tempelkan frame kunci A dan B berdampingan. Kalau mata mengira keduanya satu video yang sama, ulangi salah satunya.
 
 Boleh membuat aset gambar/vektor dengan alat yang tersedia (QuiverAI untuk SVG logo/ikon/ilustrasi, Cloudinary generate-image untuk tekstur),
 selama logo contoh dilabeli FIKTIF dan tidak meniru merek nyata. Kode renderer tetap ditulis sendiri.
 `examples/nuancier_teknik/` dan `referensi/` hanya contoh TEKNIK (sinkron suara, audio sintetis, wipe, pemeriksaan batas, tekstur kertas):
 boleh dipelajari, bukan kewajiban dan bukan template.
+
+### Bahasa gerak WAJIB (versi 2 yang disetujui Jers, 12 Nov 2026)
+Jers menolak versi "tempelan" (elemen ditempel diam, potongan kasar, huruf pixel). Standarnya: **serapi Nabila, sevisual Bagas.**
+Contoh lengkap yang disetujui: `examples/nuancier_gerak/contoh_level_uji_logo.py` (alat: `examples/nuancier_gerak/gerak.py`).
+Pelajari tekniknya; adegan, metafora, dan isi dirancang ulang tiap video.
+1. **Subtitle karaoke seperti Nabila.** Pill 2–3 kata di y ≈ 1388, kata yang sedang terdengar berwarna sorot. Waktu tiap kata WAJIB dari
+   transkrip asli, bukan dibagi rata: tempel take VO terpilih ke flow (`creative_add_flow_asset_node` dengan `generation_id`), lalu
+   `creative_transcribe_audio` (`eleven_scribe_v1`, `connect_from` node itu), unduh `words_download_url` → `words.json`.
+   Frasa putus di koma/titik. Caption menampilkan kata naskah (ejaan benar).
+2. **Setiap kalimat divisualkan seperti Bagas.** Tunjukkan bendanya, jangan cuma menuliskannya: logo di baliho, lingkaran sorot pada
+   detail, logo mengecil masuk tab browser, kisi piksel tersusun, bentuk inti dirakit, dll. Satu kalimat = satu adegan dengan 2–4 ketukan
+   gerak yang jatuh tepat pada kata yang diucapkan (pakai waktu kata).
+3. **Kanvas halus 2x** (`gerak.Frame`), easing (`out_cubic`, `out_back`, `out_expo`), judul tersusun kata per kata (`judul`), stiker (`stiker`),
+   coretan (`coret`), dan **sapuan pecahan** (`sapuan`) 2–3 kali per video untuk ganti latar. Tidak ada elemen yang diam lebih dari ~1,2 detik.
+4. **Krom tetap**: chip kecil kiri atas (mis. "LEVEL 1" atau label bab), penanda kanan atas, progress bar tipis di y 1462.
+5. **Tokoh pixel** Herman/Sonya hanya karakter yang pixel (NEAREST, skala bulat sama). Semua teks dan grafis lain halus, bukan pixel.
+6. **Zona aman Reels**: isi di x 140–940 (tengah x = 540), y 250–1340; subtitle y ≈ 1388; bar y 1462.
+7. **Periksa**: `gerak.cek_gerak()` lolos di tengah setiap adegan, lalu `toolkit/studio.py audit` dan lihat SEMUA lembar: tidak ada teks
+   tertimpa (stiker vs kepala tokoh, judul vs gambar yang sedang bergerak), tidak ada warna di luar palet A3.
 
 ---------------------------------------------------------------------------------------------------
 ## Suara
@@ -79,7 +107,7 @@ boleh dipelajari, bukan kewajiban dan bukan template.
 Tambahan wajib sebelum ekspor, karena Nuancier adalah studio logo:
 1. **Keterbacaan kecil:** setiap logo/ikon contoh dilihat juga pada 64 px dan 32 px. Kalau tampil di video sebagai contoh baik,
    harus tetap terbaca; kalau sengaja contoh buruk, beri penanda jelas bahwa itu contoh keliru.
-2. **Kontras:** teks di atas warna ≥ 4.5:1 (putih di Kobalt dan Sinabar boleh; di atas Oker pakai Tinta).
+2. **Kontras:** teks di atas warna ≥ 4.5:1 (putih di Tinta, Plum, dan Sinabar boleh; di atas Merah muda `#F7B9AE` dan Kertas pakai Tinta).
 3. **Zona aman dan area konten** (70–940 × 222–1498): tidak ada teks atau elemen penting di luarnya. Pemeriksa kotak di
    `Layout.check()` wajib memakai batas ini.
 4. **Kata yatim:** subteks/judul tidak boleh berakhir dengan satu kata sendirian di baris terakhir; ubah kata atau lebar.
@@ -193,7 +221,8 @@ Selalu pin tulisan dengan `if_version` dari bacaan terakhir. Kalau gagal karena 
 - `toolkit/layout.py` — `Layout` (cek tabrakan/keluar batas), `rich_text`, `fit_text`, `icon_label`, `ticker`.
 - `toolkit/studio.py` — `VideoWriter`, `audit`, `voice_segments`/`vo-split`, `Synth`, `duck`, `mix`, `contact_sheet`/`sheet`,
   `cloud_upload`/`upload`, `preview_copy`, `font()`, `sprite()`.
-- `assets/fonts/` — Inter (Regular, Medium, Display Bold), DejaVu Sans Mono, Poppins (tidak dipakai untuk Nuancier).
+- `assets/fonts/` — **Poppins (font Nuancier)**, Inter dan DejaVu Sans Mono (tidak dipakai lagi).
+- `examples/nuancier_gerak/` — **contoh video yang disetujui** (bahasa gerak versi 2, palet A3) + `gerak.py` + ikon `ic/`.
 - `assets/sprites/` — `herman_*`, `sonya_*`, `avatar_herman.png`, `avatar_sonya.png`, `anchors.json`:
   `*_h_0` berdiri menghadap depan, `*_h_6` membelakangi, `*_w_0..3` jalan menghadap depan, `*_w_4..7` jalan membelakangi, `*_d_0..1` duduk mengetik (dari belakang).
 - `referensi/` — contoh teknik lama (kolase rapi, close-up sinematik). Boleh dipelajari, tidak wajib, bukan arah yang dikunci.
@@ -249,7 +278,7 @@ Ini karya NYATA Nuancier, jadi aturan "tidak ada logo fiktif" berlaku terbalik d
 - Konsep **A** `jenis: "motion"`: video 1080x1920, 20–60 detik, dengan VO (suara Nuancier, lihat bagian Suara). Frame kunci 9:16.
 - Konsep **B** `jenis: "grafis"`: carousel Instagram 1080x1350 (4:5), 5–8 slide (maks 10). Slide 1 = hook, slide terakhir = ajakan + wordmark "Nuancier Studio".
   Frame kunci = 4 slide pertama yang benar-benar kamu render (JPG 540x675).
-Keduanya berwajah Nuancier (putih, Kobalt/Sinabar/Oker, Inter) tetapi **bintangnya karya klien**; jangan mengalahkan logo dengan dekorasi.
+Keduanya berwajah Nuancier (palet A3: Tinta, Kertas, Plum, Sinabar, Merah muda; Poppins) tetapi **bintangnya karya klien**; jangan mengalahkan logo dengan dekorasi.
 Kerangka dua konsep harus berbeda metafora dan alurnya (jangan hanya memotong video jadi slide).
 Gaya kedua konsep bebas mengikuti aturan emas visual (beda dari 6 entri terakhir `gaya_riwayat_nua`), dengan karya klien sebagai bintang.
 Jangan pernah menyobek, memiringkan, mengubah warna, atau menskala tidak proporsional logo klien itu sendiri.
