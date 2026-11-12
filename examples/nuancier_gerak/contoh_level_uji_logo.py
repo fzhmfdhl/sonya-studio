@@ -403,7 +403,7 @@ def s9(t):  # Simpan video ini, lalu uji logomu sendiri.
     fr = bgframe('navy'); t0 = SC[8]
     for x, ph, col in CONF:
         y = 450 + ((t - t0) * 260 + ph * 850) % 850
-        if y < 1290: fr.draw().rectangle(P(x, y, x + 12, y + 12), fill=rgba(col, .85))
+        if y < 1290 and not (360 <= x <= 720 and 470 <= y <= 880): fr.draw().rectangle(P(x, y, x + 12, y + 12), fill=rgba(col, .85))
     judul(fr, 540, 330, ['LEVEL CLEAR!'], t, t0, 100, OKR, OKR, step=.05)
     p = seg(t, wt(8, 0) - .05, wt(8, 0) + .4)
     if p > 0:
@@ -419,7 +419,9 @@ def s9(t):  # Simpan video ini, lalu uji logomu sendiri.
 
 def s10(t):  # Ikuti Nuancier Studio, untuk tips logo berikutnya.
     fr = bgframe('navy'); t0 = SC[9]
-    put_img(fr, logo_simple(110 * S), 485, 300, out_cubic(seg(t, t0, t0 + .4)))
+    a0 = out_cubic(seg(t, t0, t0 + .4))
+    rrect(fr, (473, 288, 607, 422), 30, PAPER, a0)
+    put_img(fr, logo_simple(110 * S), 485, 300, a0)
     judul(fr, 540, 450, ['Nuancier Studio'], t, wt(9, 1) - .1, 92, WHITE, OKR, step=.1)
     text(fr, 540, 585, '@nuancierstudio', F(M, 40), OKR, out_cubic(seg(t, wt(9, 2), wt(9, 2) + .4)), anchor='ma')
     p = seg(t, wt(9, 0) - .05, wt(9, 0) + .4)
