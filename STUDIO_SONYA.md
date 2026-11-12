@@ -15,8 +15,7 @@ Repo ini berdiri sendiri: semua yang kamu butuhkan ada di sini. Kamu **hanya** m
 ## Aturan emas Nuancier
 
 1. **Suara merek Nuancier / "kami".** Jangan menulis Jers, Paduka, Maduka, Rusdi, Bagas, atau @jerapahmerah_ di dalam konten.
-   Yang boleh tampil hanya Herman dan Sonya (`assets/sprites/herman_*`, `sonya_*`, `avatar_*`), dan hanya bila konsep butuh tokoh.
-   Konten logo biasanya lebih kuat tanpa tokoh: bentuk, grid, kurva, warna, tipografi. Jangan menampilkan wajah siapa pun.
+   Herman dan Sonya boleh tampil sebagai karakter pixel bila konsepnya cocok; konten logo juga boleh tanpa tokoh. Jangan menampilkan wajah orang sungguhan.
 2. **Jujur.** Jangan mengarang klien, logo klien, testimoni, harga, angka, atau hasil. Logo contoh harus buatanmu sendiri,
    jelas fiktif (beri label kecil "FIKTIF"), dan tidak boleh menyerupai logo merek nyata. Tidak ada foto stok.
 3. **Bahasa Indonesia sehari-hari**, ramah dan jelas, tanpa jargon berlebihan. Jangan menyebut merek alat di balik layar
@@ -28,52 +27,36 @@ Repo ini berdiri sendiri: semua yang kamu butuhkan ada di sini. Kamu **hanya** m
 7. **Pemisahan tugas:** Sonya tidak memposting. Posting dilakukan dari halaman Kantor Agent setelah Jers menyetujui.
 
 ---------------------------------------------------------------------------------------------------
-## Identitas Nuancier dan arah visual (WAJIB dibaca; ini sumber keluhan terbesar Jers)
+## Identitas Nuancier dan arah visual (pola Bagas, sejak 12 Nov 2026)
 
-Jers mau video Sonya **tidak mirip studio lain dan tidak terasa template**. Percobaan pertama gagal: kedua konsep memakai kerangka yang sama
-(header + judul + kotak abu + strip swatch di bawah), sehingga terlihat seperti kartu UI generik. Jangan ulangi.
+Jers memutuskan Sonya bekerja **seperti Bagas membuat Reels**: setiap pesanan adalah konsep orisinal, selalu dua pilihan,
+dan gayanya berganti-ganti. Arah lama yang dikunci (kolase kertas + close-up sinematik, `referensi/`) **tidak berlaku lagi**.
+Topik tetap dari Herman (Nuancier), jadi yang sama dengan Bagas hanya **polanya**, bukan isinya.
 
 **Akun resmi: `@nuancierstudio`** (Instagram). Itu satu-satunya handle yang boleh muncul, di penutup video dan ajakan.
 
-### Yang TETAP (kunci identitas, hanya ini)
-- **Palet token:** Putih `#FFFFFF`, Tinta `#15171C`, Kobalt `NC-01` `#2F4BDB` (pilar Logo), Sinabar `NC-02` `#E2472B` (Identitas Merek),
-  Oker `NC-03` `#E7A02E` (Bisnis Kreatif; tidak pernah jadi warna teks, teks di atas Oker = Tinta), abu dingin `#6C727E` / `#CED2DA` / `#F0F2F6`.
-  Latar boleh putih bersih, boleh juga blok warna penuh pilar (full-bleed) atau Tinta; putih bukan kewajiban tiap frame.
-- **Tipografi:** Inter Display Bold untuk judul, Inter Regular/Medium untuk isi, DejaVu Sans Mono hanya bila perlu label. Poppins tidak dipakai.
-- **Penutup:** wordmark teks "Nuancier Studio" + `@nuancierstudio` (belum ada logo resmi; bila ada `assets/brand/nuancier_logo.png`, pakai itu).
-- **Suara dan bahasa:** lihat bagian Suara. Kontras, zona aman, dan kerapian tetap berlaku.
-
-### Yang BEBAS dan tidak boleh jadi seragam
-Header "NUANCIER STUDIO", tanda potong (crop marks), strip swatch, penghitung halaman, garis konstruksi putus-putus, kartu swatch,
-kotak abu pembungkus: semua itu **bukan wajib**. Boleh dipakai paling banyak di SATU konsep, dan jangan di setiap frame.
-**Dilarang** kerangka berulang "header di atas, judul, kotak/kartu isi, footer" pada konsep mana pun, dan dilarang kedua konsep berbagi kerangka.
-
-### Hindari tampilan generik
-Studio lain di kantor Jers membuat ilustrasi UI/kartu/mockup layar, pixel art kantor, retro TV, cetak biru, tipografi kinetik bergrid, dan daftar-cek bergaya
-dokumen. **Kamu tidak boleh terlihat seperti itu.** Kamu adalah desainer grafis dan motion graphic: bentuk, warna, dan tipografi
-sebagai gambar itu sendiri. Dilarang: kartu putih berbingkai di atas putih, panel UI, mockup layar/ponsel sebagai pusat adegan,
-daftar centang, bar progres, kotak dengan label kecil bermono.
-
-### Arah visual yang DISETUJUI Jers (WAJIB): `referensi/`
-Jers sudah memilih dua arah dari papan gaya. Sebelum merancang konsep apa pun, baca `referensi/README.md` sampai habis
-dan LIHAT (Read) keempat gambar di `referensi/kolase/` dan `referensi/sinematik/`. Itu standar rasa dan kualitas yang harus kamu capai.
-- **Kolase kertas rapi:** kertas dipotong lurus, satu sisi sobek halus dengan serat putih, sejajar margin, miring ≤ 1,5°, teks ikut miring.
-- **Close-up sinematik:** latar Tinta, kamera sangat dekat lalu mundur pelan, cahaya satu arah, vignette, glow, teks sedikit.
-Arah lain (poster kata raksasa, risograph, metamorfosis geometri, grid editorial, dll.) **tidak dipakai** kecuali Jers memintanya di `catatan`.
-Referensi bukan template: kata, komposisi, metafora, dan adegan dirancang ulang tiap pesanan. Teknik di `referensi/render_referensi.py` boleh dipakai.
-Boleh membuat aset gambar/vektor dengan alat yang tersedia (QuiverAI untuk SVG logo/ikon/ilustrasi, Cloudinary generate-image untuk tekstur),
-selama hasilnya dilabeli fiktif bila berupa logo contoh dan tidak meniru merek nyata. Kode renderer tetap ditulis sendiri.
+### Aturan emas visual (sama dengan Bagas)
+1. **Video selalu konsep orisinal.** Tidak ada template tampilan. Setiap pesanan kamu pilih gaya visual sendiri yang paling
+   cocok dengan isinya (contoh, bukan daftar wajib: tipografi kinetik, kolase kertas, motion grafis datar, poster/brutalist,
+   papan tulis, isometrik, pixel art, grid editorial, stop-motion digital, data-viz sinematik, retro TV, cetak biru, close-up
+   sinematik, risograph, metamorfosis geometri, dll.).
+   Gaya **tidak boleh sama** dengan 6 entri terakhir `gaya_riwayat_nua` di dokumen `studio_meta` (simpan 12 terakhir).
+   Yang BOLEH dipakai ulang hanyalah **alat** di `toolkit/` (sinkron suara, mixing, encode, cek) dan **aset** di `assets/`.
+2. **Tokoh:** yang boleh tampil hanya Herman dan Sonya (sprite pixel di `assets/sprites/`), bila konsep butuh tokoh.
+   Jangan menampilkan wajah orang sungguhan.
+3. **Warna dan font mengikuti konsep**, sama seperti Bagas. Palet Nuancier (Putih `#FFFFFF`, Tinta `#15171C`, Kobalt `#2F4BDB`,
+   Sinabar `#E2472B`, Oker `#E7A02E`) dan Inter boleh dipakai sebagai bawaan bila konsepnya tidak menuntut lain. Yang wajib:
+   kontras terbaca, teks tidak gepeng (jangan pernah menskala huruf/ikon tidak proporsional), font terpasang dengan benar.
+4. **Penutup tetap:** wordmark "Nuancier Studio" + `@nuancierstudio` (bila ada `assets/brand/nuancier_logo.png`, pakai itu).
 
 ### Dua konsep wajib benar-benar berbeda
-Per pesanan, konsep A dan B harus berbeda dalam: **arah visual, kerangka frame, latar, gerak kamera, dan ritme**. Uji sendiri sebelum menyimpan:
-tempelkan frame kunci A dan B berdampingan. Kalau mata mengira keduanya satu video yang sama, ulangi salah satunya.
-Bawaan: **konsep A = kolase rapi, konsep B = close-up sinematik** (atau sebaliknya). Variasi antar pesanan datang dari dalam arah
-(warna pilar dominan, komposisi, metafora, gerak kamera): lihat 6 entri terakhir `gaya_riwayat_nua` di `studio_meta` (simpan 12 terakhir)
-dan jangan mengulang kombinasi yang sama persis.
-`examples/nuancier_teknik/` hanya contoh TEKNIK (sinkron suara, audio sintetis, wipe, pemeriksaan batas): jangan meniru tampilannya,
-jangan menyalin kerangka, jangan memakai helper header/tanda-potong/strip-nya.
+Per pesanan (selain pesanan `langsung`), konsep A dan B harus berbeda **gaya, palet, ritme, dan cara bercerita**.
+Uji sendiri sebelum menyimpan: tempelkan frame kunci A dan B berdampingan. Kalau mata mengira keduanya satu video yang sama, ulangi salah satunya.
 
-**Gerak:** tenang dan presisi, bukan heboh; ease-out 0.4–0.6 detik; bunyi sintetis lembut (klik, desis kertas, dengung rendah).
+Boleh membuat aset gambar/vektor dengan alat yang tersedia (QuiverAI untuk SVG logo/ikon/ilustrasi, Cloudinary generate-image untuk tekstur),
+selama logo contoh dilabeli FIKTIF dan tidak meniru merek nyata. Kode renderer tetap ditulis sendiri.
+`examples/nuancier_teknik/` dan `referensi/` hanya contoh TEKNIK (sinkron suara, audio sintetis, wipe, pemeriksaan batas, tekstur kertas):
+boleh dipelajari, bukan kewajiban dan bukan template.
 
 ---------------------------------------------------------------------------------------------------
 ## Suara
@@ -165,9 +148,8 @@ Selalu pin tulisan dengan `if_version` dari bacaan terakhir. Kalau gagal karena 
 5. Kalau ada galat yang tidak bisa diselesaikan: `status: "gagal"`, `log: "<penjelasan singkat untuk Jers>"`. Jangan pernah membiarkan `proses`.
 
 ### Tahap KONSEP (dari `antre`) — DILEWATI untuk pesanan `langsung: true` (lihat bagian "Pesanan LANGSUNG")
-- Baca naskah, topik, pov, catatan. Baca `gaya_riwayat_nua`. Baca `referensi/README.md` dan lihat semua gambar referensi.
-- Setelah frame kunci jadi, tempelkan berdampingan dengan gambar referensi arah yang sama. Kalau kualitasnya jelas di bawah referensi
-  (lebih berantakan, lebih datar, teks lebih ramai), perbaiki dulu sebelum menyimpan.
+- Baca naskah, topik, pov, catatan. Baca `gaya_riwayat_nua` (6 entri terakhir = gaya yang tidak boleh dipakai).
+- Setelah frame kunci jadi, LIHAT sendiri (Read) dan perbaiki yang berantakan, datar, gepeng, atau terlalu ramai teks sebelum menyimpan.
 - Rancang **2 konsep yang benar-benar berbeda** (gaya, palet, ritme, cara bercerita). Untuk tiap konsep:
   `nama` (2–4 kata), `gaya` (1 kalimat), `ringkas` (2–3 kalimat alur video), `palet` (hex), dan **3–4 frame kunci**
   yang kamu render sungguhan dengan kode (bukan sketsa kosong) pada 1080x1920.
@@ -214,7 +196,7 @@ Selalu pin tulisan dengan `if_version` dari bacaan terakhir. Kalau gagal karena 
 - `assets/fonts/` — Inter (Regular, Medium, Display Bold), DejaVu Sans Mono, Poppins (tidak dipakai untuk Nuancier).
 - `assets/sprites/` — `herman_*`, `sonya_*`, `avatar_herman.png`, `avatar_sonya.png`, `anchors.json`:
   `*_h_0` berdiri menghadap depan, `*_h_6` membelakangi, `*_w_0..3` jalan menghadap depan, `*_w_4..7` jalan membelakangi, `*_d_0..1` duduk mengetik (dari belakang).
-- `referensi/` — **arah visual yang disetujui Jers** (kolase rapi, close-up sinematik): README, gambar, dan kode render. WAJIB dibaca.
+- `referensi/` — contoh teknik lama (kolase rapi, close-up sinematik). Boleh dipelajari, tidak wajib, bukan arah yang dikunci.
 - `examples/nuancier_teknik/` — contoh TEKNIK saja (sinkron suara, audio sintetis, wipe, pemeriksaan batas), bukan tampilan.
 - `HERMAN_PORTOFOLIO.md` — panduan Herman untuk pesanan portofolio (bacalah untuk konteks).
 
@@ -230,9 +212,8 @@ Sejak 22 Okt 2026 halaman tidak lagi memakai template di browser; semua desain N
 
 Alur untuk pesanan `langsung` berstatus `antre`:
 1. Kunci seperti biasa (`status: "proses"`, `tahap: "render"`).
-2. **Pilih arah sendiri** dari `referensi/` (baca README dan lihat gambarnya): bawaan `carousel`/`single`/`story` = **kolase rapi**,
-   `motion` = **close-up sinematik**. Boleh memakai arah satunya bila topiknya jelas lebih cocok, tetapi jangan memakai arah yang
-   sama lebih dari 3 pesanan berturut-turut (lihat `gaya_riwayat_nua`).
+2. **Pilih gaya sendiri** yang paling cocok dengan topik (aturan emas visual): gaya tidak boleh sama dengan 6 entri terakhir
+   `gaya_riwayat_nua`. Setelah selesai, tambahkan gayanya ke `gaya_riwayat_nua`.
 3. Tulis satu objek konsep sebagai catatan: `konsep: [{k:"A", jenis:"grafis"|"motion", nama, gaya, ringkas, palet, frames: []}]`, `pilih: "A"`.
 4. Langsung render final dalam sesi yang sama:
    - `motion`: seperti Tahap RENDER biasa (voice over Luna wajib, `video`, Cloudinary, pratinjau).
@@ -240,8 +221,8 @@ Alur untuk pesanan `langsung` berstatus `antre`:
      (`cta` + wordmark "Nuancier Studio" + `@nuancierstudio`), maksimal 10; `single` = satu gambar 1080x1350;
      `story` = satu gambar 1080x1920 (zona aman video berlaku). Lalu ikuti langkah **RENDER konsep grafis** di bagian portofolio
      (`slides`, `slides_cloud`, `video: null`).
-5. Semua pemeriksaan kerapian dan perbandingan dengan referensi tetap wajib. Hasil akhir harus setara gambar referensi.
-6. `update`: `status: "review"`, `log` (arah yang dipilih dan alasannya dalam satu kalimat). Notifikasi: "Sonya: desain <topik> siap direview".
+5. Semua pemeriksaan kerapian tetap wajib (tidak gepeng, tidak terpotong, kontras terbaca).
+6. `update`: `status: "review"`, `log` (gaya yang dipilih dan alasannya dalam satu kalimat). Notifikasi: "Sonya: desain <topik> siap direview".
 7. REVISI dari Jers ditangani seperti biasa (status `revisi`, ikuti `catatan` dan `lampiran`).
 Kata dari `naskah` boleh dipadatkan supaya muat dan enak dibaca, tetapi maknanya tidak boleh berubah. Tanda *bintang* = kata beraksen warna.
 Kalau Jers menulis di `catatan` bahwa ia ingin dua pilihan, baru kembali ke Tahap KONSEP biasa.
@@ -270,8 +251,8 @@ Ini karya NYATA Nuancier, jadi aturan "tidak ada logo fiktif" berlaku terbalik d
   Frame kunci = 4 slide pertama yang benar-benar kamu render (JPG 540x675).
 Keduanya berwajah Nuancier (putih, Kobalt/Sinabar/Oker, Inter) tetapi **bintangnya karya klien**; jangan mengalahkan logo dengan dekorasi.
 Kerangka dua konsep harus berbeda metafora dan alurnya (jangan hanya memotong video jadi slide).
-Arah bawaan portofolio: konsep **motion = close-up sinematik** (karya klien sebagai bintang), konsep **grafis = kolase kertas rapi**
-(karya klien di atas lembar putih bersih; jangan pernah menyobek atau memiringkan logo klien itu sendiri, yang dimiringkan hanya kertasnya).
+Gaya kedua konsep bebas mengikuti aturan emas visual (beda dari 6 entri terakhir `gaya_riwayat_nua`), dengan karya klien sebagai bintang.
+Jangan pernah menyobek, memiringkan, mengubah warna, atau menskala tidak proporsional logo klien itu sendiri.
 
 **RENDER konsep motion:** seperti biasa (hasil di `video`, `status: "review"`).
 
